@@ -1,24 +1,17 @@
-# time-handler
+# Time handler
 
-## Project setup
-```
-yarn install
-```
+这是一款开源的时间管理工具，暂时不考虑加入太多功能，因为没有这个能力
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## TODO-List： 
 
-### Compiles and minifies for production
-```
-yarn build
-```
+V1:
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ - [ ] Login (account can only be created by administor)
+ - [ ] DashBoard (copy Github Contribution)
+ - [ ] Task List（不区分日期的任务，只区分todo，in-progress，done）
+ - [ ] Task Editor
+ - [ ] Calendar（需要区分日期的任务）
+ - [ ] Setting: Notification API
+ - [ ] Article Reading/Writing
+ - [ ] File System
+ - [ ] Spider For Wechat/Github/zhihu/juejin

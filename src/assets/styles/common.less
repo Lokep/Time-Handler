@@ -1,0 +1,121 @@
+/* margin padding */
+
+//EAECEF
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #eaecef;
+}
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: DINAlternate-Bold, DINAlternate, monospace, PingFang SC;
+}
+
+#app {
+  height: 100%;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8faff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mg(@a: 1) when(@a <= 10) {
+  @i: @a * 5;
+  .ml-@{i} {
+    margin-left: @a * 5px;
+  }
+
+  .mr-@{i} {
+    margin-right: @a * 5px;
+  }
+
+  .mt-@{i} {
+    margin-top: @a * 5px;
+  }
+
+  .mb-@{i} {
+    margin-bottom: @a * 5px;
+  }
+
+  .pl-@{i} {
+    padding-left: @a * 5px;
+  }
+
+  .pr-@{i} {
+    padding-right: @a * 5px;
+  }
+
+  .pt-@{i} {
+    padding-top: @a * 5px;
+  }
+
+  .pb-@{i} {
+    padding-bottom: @a * 5px;
+  }
+
+  .mg((@a + 1));
+}
+
+.mg();
+
+/** flex */
+.flex {
+  display: flex;
+}
+
+.align-center {
+  .flex;
+  align-items: center;
+}
+
+.align-bottom {
+  .flex;
+  align-items: flex-end;
+}
+
+.justify-between {
+  .flex;
+  justify-content: space-between;
+}
+
+.justify-center {
+  .flex;
+  justify-content: center;
+}
+
+.justify-around {
+  .flex;
+  justify-content: space-around;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.ov {
+  overflow: hidden;
+}

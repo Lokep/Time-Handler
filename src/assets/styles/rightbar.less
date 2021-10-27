@@ -1,0 +1,37 @@
+/**
+* 使用场景：task
+*/
+
+.rightbar {
+  overflow: auto;
+
+  &-user {
+    margin: 8px;
+    overflow: hidden;
+    flex-direction: column;
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 4px;
+      background-color: #f8faff;
+      margin-top: 32px;
+    } 
+
+    .nickname, .mail {
+      margin-top: 16px;
+      line-height: 1;
+      font-size: 14px;
+    }
+  }
+
+  &-calendar {
+    .el-calendar-table .el-calendar-day {
+      height: 36px;
+      text-align: center;
+    }
+    .el-button-group {
+      display: none;
+    }
+  }
+}
