@@ -60,9 +60,16 @@ import { defineComponent } from 'vue'
 import { routes } from '@/router/index'
 import { RouteRecordRaw } from 'vue-router'
 
-const getMenuList = (routes: Array<RouteRecordRaw>): Array<any> => {
-  if (routes.length > 0 && 'children' in routes[0]) {
-    return routes[0].children || []
+const getMenuList = (routes: Array<RouteRecordRaw>, parentPath: String = '/'): Array<any> => {
+  if (routes.length > 0) {
+    return routes.reduce((result: any, item) => {
+      if (item.children && item.children.length > 0) {
+        return [...result, ...getMenuList(item.children, item.path)]
+      } else {
+        item.path === '' && (item.path = parentPath + item.path)
+        return [...result, item]
+      }
+    }, [])
   } else {
     return []
   }
@@ -70,8 +77,6 @@ const getMenuList = (routes: Array<RouteRecordRaw>): Array<any> => {
 
 export default defineComponent({
   setup() {
-
-
 
     return {
       menus: (getMenuList(routes) || []).filter(item => !item.meta || !item.meta.hide)

@@ -46,6 +46,15 @@ export const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/article/index.vue"),
       },
       {
+        path: "edit",
+        name: "Edit",
+        meta: {
+          title: "edit",//'文章',
+          icon: 'iconedit-filling'
+        },
+        component: () => import("@/views/article/edit.vue"),
+      },
+      {
         path: "task",
         name: "Task",
         meta: {
@@ -56,13 +65,39 @@ export const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "file",
-        name: "File",
+        name: "Wrapper",
         meta: {
           title: "file",//'文件',
           icon: 'iconsucai'
         },
-        component:  () => import("@/views/file/index.vue"),
+        component:  () => import("@/views/file/wrapper.vue"),
+        children: [
+          {
+            path: "",
+            name: "File",
+            meta: {
+              title: "file",//'文件',
+              icon: 'iconsucai'
+            },
+            component:  () => import("@/views/file/index.vue"),
+          },
+          {
+            path: ":id",
+            name: "FileContent",
+            meta: {
+              title: "file",//'文件',
+              hide: true
+            },
+            component:  () => import("@/views/file/detail.vue"),
+          }
+        ]
       },
+      /**
+       * {
+       *  path: 'tools',
+       *  name: 'Tools',
+       * }
+       */
       {
         path: "setting",
         name: "Setting",

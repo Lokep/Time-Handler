@@ -1,19 +1,32 @@
+<style lang="less" scoped>
+.fragment {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.wrapper {
+  height: 0;
+  overflow: auto;
+  flex: 1;
+}
+
+</style>
 <template>
   <div class="fragment">
-    <div class="topbar"></div>
+    
     <div class="wrapper">
-      <el-card></el-card>
+      <router-view></router-view>
     </div>
-    <el-empty></el-empty>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   setup() {
-
 
     return {
 
