@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, isNavigationFailure, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, createWebHashHistory, isNavigationFailure, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
 
 
@@ -113,7 +113,7 @@ export const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes,
 });
 
