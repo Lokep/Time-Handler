@@ -45,7 +45,7 @@
       v-for="(item, index) in menus" :key="index"
       :to="item.path"
       custom
-      v-slot="{ href, route, navigate, isActive, isExactActive }"
+      v-slot="{ href, isActive }"
     >
       <div :class="'menu-item ' + (isActive ? 'is-active' : '')" @click="$router.push(href)">
         <div :class="'menu-item__icon iconfont ' + item.meta?.icon"></div>
