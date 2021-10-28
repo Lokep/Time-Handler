@@ -50,7 +50,8 @@ export const routes: Array<RouteRecordRaw> = [
         name: "Edit",
         meta: {
           title: "edit",//'文章',
-          icon: 'iconedit-filling'
+          icon: 'iconedit-filling',
+          hide: true
         },
         component: () => import("@/views/article/edit.vue"),
       },
