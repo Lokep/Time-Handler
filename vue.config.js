@@ -15,14 +15,14 @@ module.exports = {
      }
 
     return {
-      // plugins: [
-      //   new CompressionWebpackPlugin({
-      //     algorithm: 'gzip',
-      //     test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
-      //     threshold: 10240,
-      //     minRatio: 0.8
-      //   })
-      // ]
+      plugins: [
+        new CompressionWebpackPlugin({
+          algorithm: 'gzip',
+          test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
+          threshold: 10240,
+          minRatio: 0.8
+        })
+      ]
     }
   }
 }
