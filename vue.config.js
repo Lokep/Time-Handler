@@ -10,6 +10,7 @@ module.exports = {
       config.externals = { // 不会被打包的库
        'vue': 'Vue',
        'vue-router': 'VueRouter',
+       'element-plus': 'ElementPlus'
       }
      }
 
